@@ -15,6 +15,7 @@ man <command name>
 help <command name>>
 help [[ expression ]]
 help test
+cat <file name>
 ```
 ```echo $?``` will show the exit status of the latest command run, where ```0``` stands for ```true```
 ```
@@ -29,6 +30,7 @@ help test
 ```declare -p``` will print all environment variables
 ```declare -p <variable name>```
 ```type <command name>``` will let you know the place where the command is running from
+```declare -p IFS``` check Internal Field Separator
 
 ### Script Elements
 ```shebang```
@@ -200,3 +202,10 @@ GET_FORTUNE() {
 ```
 - calling a function with one argument: ```GET_FORTUNE arg1```
 - accessing the argument of a function: ``` $1```
+#### Pipes: |
+```
+cat courses.csv | while read MAJOR COURSE
+do
+echo $MAJOR
+done
+```
