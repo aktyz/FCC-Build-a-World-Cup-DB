@@ -1,5 +1,7 @@
 # FCC-Build-a-World-Cup-DB
-One of the projects to complete https://www.freecodecamp.org/learn/relational-database/
+One of the projects to complete [FCC Relational Database Certification](https://www.freecodecamp.org/learn/relational-database/)
+
+More SQL notest added in [FCC-Build-a-Celestial-Bodies-DB README.md](https://github.com/aktyz/FCC-Build-a-Celestial-Bodies-DB/blob/main/README.md)
 
 ## Bash Scripting
 
