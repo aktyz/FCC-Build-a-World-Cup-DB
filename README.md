@@ -6,7 +6,7 @@ More SQL notest added in [FCC-Build-a-Celestial-Bodies-DB README.md](https://git
 ## Bash Scripting
 
 ### Bash Commands
-```
+```sh
 touch <file name>
 sh <bash script name>
 bash <bash script name>
@@ -18,21 +18,24 @@ help <command name>>
 help [[ expression ]]
 help test
 cat <file name>
-```
-```echo $?``` will show the exit status of the latest command run, where ```0``` stands for ```true```
-```
+
+echo $? #will show the exit status of the latest command run, where '0' stands for 'true'
+
 [[ -a countdown.sh ]]; echo $?
 [[ -a bad_file.txt ]]; echo $?
 [[ -x countdown.sh ]]; echo $?
 [[ -x countdown.sh && 5 -le 4 ]]; echo $?
 [[ -x countdown.sh || 5 -le 4 ]]; echo $?
+[[ ! 11 =~ ^[0-9]+$ ]]; echo $? #NOT matching RegEx
+
+ls /  #lists what's in the root of the system
+printenv #will print all environment variables
+declare -p #will print all environment variables
+declare -p <variable name>
+type <command name> #will let you know the place where the command is running from
+declare -p IFS #check Internal Field Separator
+
 ```
-```ls /``` lists what's in the root of the system
-```printenv``` will print all environment variables
-```declare -p``` will print all environment variables
-```declare -p <variable name>```
-```type <command name>``` will let you know the place where the command is running from
-```declare -p IFS``` check Internal Field Separator
 
 ### Script Elements
 ```shebang```
@@ -60,13 +63,13 @@ Example: ```# Program that counts down to zero from a given argument```
 ```echo $<number of argument>```
 Example: ```echo $1```
 #### if statement
-```
+```sh
 if [[ CONDITION ]]
 then
 	STATEMENTS
 ```
 ```elif [[ CONDITION ]]``` (you can have as many elif parts as you want)
-```
+```sh
 then
 	STATEMENTS
 else
@@ -74,13 +77,13 @@ else
 fi
 ```
 Example:
-```
+```sh
 If [[ $1 == arg1 ]]
 then
   echo true
 fi
 ```
-```
+```sh
 if [[ $1 == arg1 ]]
 then
   echo true
@@ -122,8 +125,26 @@ Example:
 [[ -a countdown.sh ]]; echo $?
 [[ -a bad_file.txt ]]; echo $?
 ```
-#### for statement
+#### case statement
+```sh
+case EXPRESSION in
+  Pattern_Case_1)
+   STATEMENTS
+   ;;
+ Pattern_Case_1)
+   STATEMENTS
+   ;;
+ Pattern_Case_N)
+   STATEMENTS
+   ;;
+ *)
+   STATEMENTS
+   ;;
+esac
 ```
+
+#### for statement
+```sh
 for (( i = 10; i > 0; i-- ))
 	do
 		echo $i
